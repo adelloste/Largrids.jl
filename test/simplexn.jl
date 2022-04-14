@@ -1,6 +1,4 @@
 using Test
-using LinearAlgebraicRepresentation
-Lar = LinearAlgebraicRepresentation
 
 @testset "simplexn" begin
 	@testset "extrudeSimplicial" begin
