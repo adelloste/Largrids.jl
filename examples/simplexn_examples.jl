@@ -3,9 +3,7 @@ Lar = LinearAlgebraicRepresentation
 using ViewerGL
 GL = ViewerGL
 
-
 VOID = [[]], [[1]]
-
 
 # example 1
 
@@ -36,7 +34,6 @@ GL.VIEW([ GL.GLGrid(model..., GL.COLORS[7], 0.5) ]); #TODO: check
 model = Lar.extrudeSimplicial( model, repeat([1,-1],outer=10) )
 GL.VIEW([ GL.GLGrid(model..., GL.COLORS[7],0.7),
         GL.GLFrame ]);
-
 
 # example 4
 
