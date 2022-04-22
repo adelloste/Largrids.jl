@@ -3,12 +3,9 @@ push!(LOAD_PATH,"../src/")
 using Documenter, LinearAlgebraicRepresentation
 Lar = LinearAlgebraicRepresentation
 
-
 makedocs(
-	format = Documenter.HTML(
-		prettyurls = get(ENV, "CI", nothing) == "true"
-	),
 	sitename = "LinearAlgebraicRepresentation.jl",
+	format = Documenter.HTML(),
 	assets = ["assets/lar.css", "assets/logo.png"],
 	pages = [
 		"Home" => "index.md",
@@ -18,4 +15,9 @@ makedocs(
 			"Simplicial grids" => "simplexn.md"
 		]
 	]
+)
+
+
+deploydocs(
+	repo = "github.com/adelloste/LinearAlgebraicRepresentation.jl.git"
 )
