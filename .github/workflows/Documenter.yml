@@ -7,7 +7,7 @@ name: Documenter
   pull_request: null
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
       - uses: julia-actions/setup-julia@latest
