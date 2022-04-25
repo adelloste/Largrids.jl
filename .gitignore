@@ -3,11 +3,9 @@
 
 ### Julia ###
 docs/build/
-CAGD.jl/docs/build/
 *.jl.cov
 *.jl.*.cov
 *.jl.mem
-deps/deps.jl
 
 ### Linux ###
 *~
@@ -65,3 +63,6 @@ Temporary Items
 # Documenter.jl compliled files shouldn't be commited
 docs/build
 *.obj
+
+# Notebooks
+.ipynb_checkpoints
