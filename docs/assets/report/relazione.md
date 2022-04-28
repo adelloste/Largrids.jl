@@ -1,7 +1,7 @@
 # Studio preliminare: LAR cuboids & simplicial
-### Alessandro Dell'Oste,
-### Maurizio Brini,
-### Manuel Granchelli,
+### Alessandro Dell'Oste: 502589,
+### Maurizio Brini: 505195,
+### Manuel Granchelli: 512406
 #
 Nel progetto numero 1 - LAR cuboids & simplicial sono stati analizzati i due file sorgenti *largrid.jl* e *simplexn.jl* presenti all'interno della libreria Lar (Linear Algebraic Rapresentation). 
 
