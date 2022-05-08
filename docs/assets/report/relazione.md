@@ -9,27 +9,32 @@ Nel progetto numero 1 - **LAR cuboids & simplicial** sono stati analizzati i due
 ## Repo GitHub: 
 https://github.com/adelloste/LinearAlgebraicRepresentation.jl
 
+## Indice
+* [Simplexn.jl](#simplexn.jl)
+* [Largrid.jl](#largrid.jl)
+* [Grafo dipendenze](#grafo-dipendenze)
+* [Esempi](#esempi)
 
 ## Simplexn.jl
 Il primo dei due file analizzati *simplexn.jl* contiene un insieme di funzioni per generare un **complesso cellulare di simpliciali**. Un complesso simpliciale è un'aggregazione ordinata di simplessi, ossia un'unione di un certo numero di simplessi che si intersecano fra loro su *facce comuni*. 
 
 In particolare, nella libreria sono definite funzioni per la creazione efficiente di complessi simpliciali, generati da complessi simpliciali di *dimensione parziale*, la produzione di *griglie simpliciali* di qualsiasi dimensione e *l'estrazione di faccette* (cioè di (d-1)-facce) di complessi simpliciali di dimensione d. Le funzioni hanno complessità temporale lineare rispetto alla dimensione dell'output. 
 
-Entrando nel dettaglio, la generazione di simplessi è definita dalla funzione `simplex` che restituisce un simplesso *n-dimensionale* nel *n-spazio* del modello LAR *(Figura (a))*. Un modello LAR è definito da una coppia di *(vertici, celle)*. All'interno di tale funzione viene effettuata una chiamata alla funzione `simplexFacets`, presente sempre all'interno del file *simplexn.jl*, che si occupa dell'estrazione delle *(d-1)-faccette* non orientate di simplessi *d-dimensionali* e restituisce la rappresentazione LAR di input della topologia di un **complesso cellulare**. È presente anche l'estrusione di simpliciali che è definita dalla funzione `extrudeSimplicial` che si occupa di generare il modello con vertici e celle di un'estrusione di un modello LAR *(Figure (c), (d), (e))*. Infine, la funzione `simplexGrid` si occupa della generazione di griglie simpliciali di qualsiasi dimensione e forma *(Figura (b))*.
+Entrando nel dettaglio, la generazione di simplessi è definita dalla funzione `simplex` che restituisce un simplesso *n-dimensionale* nel *n-spazio* del modello LAR *(Figura ([3](#id-fig-3)))*. Un modello LAR è definito da una coppia di *(vertici, celle)*. All'interno di tale funzione viene effettuata una chiamata alla funzione `simplexFacets`, presente sempre all'interno del file *simplexn.jl*, che si occupa dell'estrazione delle *(d-1)-faccette* non orientate di simplessi *d-dimensionali* e restituisce la rappresentazione LAR di input della topologia di un **complesso cellulare**. È presente anche l'estrusione di simpliciali che è definita dalla funzione `extrudeSimplicial` che si occupa di generare il modello con vertici e celle di un'estrusione di un modello LAR *(Figure ([5](#id-fig-5)), ([6](#id-fig-6)), ([7](#id-fig-7)))*. Infine, la funzione `simplexGrid` si occupa della generazione di griglie simpliciali di qualsiasi dimensione e forma *(Figura ([4](#id-fig-4)))*.
 
 ## Largrid.jl 
 Nel secondo file analizzato sono presenti funzioni per la generazione e prodotto di *complessi multidimensionali*. A seconda della dimensione dell'input possono generare complessi di dimensione completa *(solidi)* oppure complessi di dimensione parziale. 
 
 In particolare, vengono implementati complessi cellulari di dimensioni parziali (ad esempio 0 o 1-dimensionali) con coordinate intere, la cui generazione è definita nella funzione `grid_0` che genera un complesso uniforme 0-dimensionale e nella funzione `grid_1` per la generazione di un complesso uniforme 1-dimensionale. Per generare la rappresentazione LAR delle celle di complessi 0 o 1-dimensionali è definita anche la funzione `larGrid` che restituisce l'ordine del complesso di output. 
 
-La generazione di **complessi cuboidali** avviene tramite il prodotto cartesiano definito nella funzione `larCellProd`. Il prodotto di d complessi 1-dimensionali generano celle solide, mentre il prodotto di n complessi 0-dimensionali e (n-d) complessi 1-dimensionali generano celle non solide nello spazio n-dimensionale. La funzione per il **prodotto cartesiano** viene chiamata all'interno della funzione `larGridSkeleton` che produce lo schema d-dimensionale di una griglia cuboidale di dimensione data in input tramite il parametro `shape`. A sua volta, la funzione `larGridSkeleton`, è chiamata all'interno di un'altra principale funzione chiamata `cuboidGrid` che è definita come un generatore multidimensionale. Questa funzione può generare o una griglia d-dimensionale solida di d-cuboidi nello spazio d-dimensionale oppure l'array dello schema della forma a seconda del parametro passato in input. Infine, un'altra principale funzione presente all'interno di *largrid.jl* è `larModelProduct` che prende in input due *modelli LAR* e ne restituisce il loro prodotto cartesiano *(Figura (g))*.
+La generazione di **complessi cuboidali** avviene tramite il prodotto cartesiano definito nella funzione `larCellProd`. Il prodotto di d complessi 1-dimensionali generano celle solide, mentre il prodotto di n complessi 0-dimensionali e (n-d) complessi 1-dimensionali generano celle non solide nello spazio n-dimensionale. La funzione per il **prodotto cartesiano** viene chiamata all'interno della funzione `larGridSkeleton` che produce lo schema d-dimensionale di una griglia cuboidale di dimensione data in input tramite il parametro `shape`. A sua volta, la funzione `larGridSkeleton`, è chiamata all'interno di un'altra principale funzione chiamata `cuboidGrid` che è definita come un generatore multidimensionale. Questa funzione può generare o una griglia d-dimensionale solida di d-cuboidi nello spazio d-dimensionale oppure l'array dello schema della forma a seconda del parametro passato in input. Infine, un'altra principale funzione presente all'interno di *largrid.jl* è `larModelProduct` che prende in input due *modelli LAR* e ne restituisce il loro prodotto cartesiano *(Figura ([9](#id-fig-9)))*.
 
 
 ## Grafo dipendenze
 
-![Dipendenze del file simplexn.jl](./images/simplexn.png){#id .class width=60%}
+![Dipendenze del file simplexn.jl](./images/simplexn.png){#id-fig-1 .class width=40%}
 
-![Dipendenze del file largrid.jl](./images/largrid.png){#id .class width=50%}
+![Dipendenze del file largrid.jl](./images/largrid.png){#id-fig-2 .class width=60%}
 
 ## Esempi
 Nella seguente sezione sono riportati esempi, con i relativi output, di alcune funzioni dei due file sorgenti. Negli esempi viene utilizzata la libreria in Julia **ViewerGL** per la visualizzazione interattiva 3D dei dati geometrici.
@@ -44,7 +49,7 @@ GL.GLLines(model...), GL.GLFrame ]);
 ```
 **Output:**
 
-![simplex](./images/simplex.png){#id .class width=45% margin=auto}
+![simplex](./images/simplex.png){#id-fig-3 .class width=35% margin=auto}
 
 ```julia
 grid_2d = Lar.simplexGrid([3,3])
@@ -56,7 +61,7 @@ GL.GLLines(grid_2d...), GL.GLFrame ]);
 ```
 **Output:**
 
-![simplexGrid](./images/simplexGrid.png){#id .class width=48% margin=auto}
+![simplexGrid](./images/simplexGrid.png){#id-fig-4 .class width=48% margin=auto}
 
 ```julia
 VOID = [[]], [[1]]
@@ -68,7 +73,7 @@ GL.VIEW([ GL.GLGrid(model..., GL.COLORS[7], 0.5) ]);
 ```
 **Output:**
 
-![extrudeSimplicial](./images/extrudeSimplicial_1.png){#id .class width=48% margin=auto}
+![extrudeSimplicial](./images/extrudeSimplicial_1.png){#id-fig-5 .class width=48% margin=auto}
 
 ```julia
 model = Lar.extrudeSimplicial( model, ones(10) )
@@ -83,7 +88,7 @@ GL.VIEW([ GL.GLLines(model..., GL.COLORS[7]), GL.GLFrame ]);
 ```
 **Output:**
 
-![extrudeSimplicial](./images/extrudeSimplicial_2.png){#id .class width=40% margin=auto}
+![extrudeSimplicial](./images/extrudeSimplicial_2.png){#id-fig-6 .class width=40% margin=auto}
 
 ```julia
 model = Lar.extrudeSimplicial( model, ones(10) )
@@ -95,7 +100,7 @@ GL.VIEW([ GL.GLGrid(model..., GL.COLORS[7], 0.5) ]);
 ```
 **Output:**
 
-![extrudeSimplicial](./images/extrudeSimplicial_3.png){#id .class width=40% margin=auto}
+![extrudeSimplicial](./images/extrudeSimplicial_3.png){#id-fig-7 .class width=40% margin=auto}
 
 ### Largrid.jl
 ```julia
@@ -106,7 +111,7 @@ GL.VIEW([ GL.GLFrame2, GL.GLGrid( model1D...,GL.COLORS[1],1 ) ]);
 ```
 **Output:**
 
-![qn](./images/qn.png){#id .class width=40% margin=auto}
+![qn](./images/qn.png){#id-fig-8 .class width=40% margin=auto}
 
 ```julia
 model2D = Lar.larModelProduct([ model1D, model1D ])
@@ -119,7 +124,7 @@ GL.VIEW([ GL.GLFrame2, GL.GLGrid( model2D...,GL.COLORS[1],1 ) ]);
 ```
 **Output:**
 
-![larModelProduct](./images/larModelProduct.png){#id .class width=40%}
+![larModelProduct](./images/larModelProduct.png){#id-fig-9 .class width=40%}
 
 ```julia
 model3D = Lar.INSR(Lar.larModelProduct)([model1D, model1D, model1D])
@@ -136,4 +141,4 @@ GL.VIEW([ GL.GLFrame, GL.GLPol( model3D...,GL.COLORS[1],1 ) ]);
 ```
 **Output:**
 
-![INSR](./images/INSR.png){#id .class width=40%}
+![INSR](./images/INSR.png){#id-fig-10 .class width=40%}
