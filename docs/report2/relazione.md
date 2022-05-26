@@ -66,7 +66,7 @@ function f_threads(x)
 end
 ```
 
-Infine, oltre all'aggiunta di macro e al cambio del tipo delle variabili, alcune funzioni sono state partizionate in nuove funzioni che vengono chiamate all'interno delle funzioni originali. Un esempio è la funzione **larModelProduct** all'interno del file **largrid.jl**, nella quale una parte della funzione si occupa di creare i vertici e un'altra parte della creazione delle celle. Sono state create due funzioni (*createVertices()* e *createCells()*), che vengono richiamate all'interno della nuova funzione **larModelProduct_opt**.
+Infine, oltre all'aggiunta di macro e al cambio del tipo delle variabili, alcune funzioni sono state partizionate in nuove funzioni che vengono chiamate all'interno delle funzioni originali. Un esempio è la funzione **larModelProduct** all'interno del file **largrid.jl**, nella quale una parte della funzione si occupa di creare i vertici e un'altra parte della creazione delle celle. Sono state create due funzioni (*createVertices()* e *createCells()*), che vengono richiamate all'interno della nuova funzione **larModelProduct**.
 
 Le macro e le varie ottimizzazioni successivamente sono state implementate anche all'interno del file **simplexn.jl**.
 
