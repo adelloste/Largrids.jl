@@ -19,7 +19,7 @@ V, cells = Lar.simplex(3, true)
 Plasm.view(Plasm.numbering(0.5)( (V,cells[1:end-1]) ))
 ```
 """
-function simplex(n, fullmodel=false)
+function simplex(n::Int, fullmodel=false)
 	eye(n) = LinearAlgebra.Matrix{Int}(I,n,n)
 	V = [zeros(n,1) eye(n)]
 	CV = [collect(1:n+1)]
@@ -61,50 +61,50 @@ julia> W,FW = extrudeSimplicial(model, pattern);
 julia> Plasm.view(W,FW)
 ```
 """
-function extrudeSimplicial(model::Lar.LAR, pattern)
-	V = [model[1][:,k] for k=1:size(model[1],2)]
-    FV = model[2]
-    d, m = length(FV[1]), length(pattern)
-    coords = collect(cumsum(append!([0], abs.(pattern))))
-    offset, outcells, rangelimit, i = length(V), [], d*m, 0
-    for cell in FV
-    	i += 1
-        tube = [v+k*offset for k in range(0, length=m+1) for v in cell]
-        cellTube = [tube[k:k+d] for k in range(1, length=rangelimit)]
-        if i==1 outcells = reshape(cellTube, d, m)
-        else outcells = vcat(outcells, reshape(cellTube, d, m)) end
-    end
+@inline function getCellGroups(outcells, pattern)
     cellGroups = []
     for i in 1:size(outcells, 2)
         if pattern[i]>0
             cellGroups = vcat(cellGroups, outcells[:, i])
         end
     end
+    return convert(Vector{Vector{Int}}, cellGroups)
+end
+
+@inline function getOutCells(FV, pattern, V)
+    d, m = length(FV[1]), length(pattern)
+    offset, outcells, rangelimit, i = length(V), [], d*m, 0
+
+    for cell in FV
+        i += 1
+        tube = [v+k*offset for k in range(0, length=m+1) for v in cell]
+        cellTube = [tube[k:k+d] for k in range(1, length=rangelimit)]
+        if i==1 outcells = reshape(cellTube, d, m)
+        else outcells = vcat(outcells, reshape(cellTube, d, m)) end
+    end
+    return outcells
+end
+
+@inline function extrudeSimplicial(model::Lar.LAR, pattern)
+    V = [model[1][:,k] for k=1:size(model[1],2)]
+    FV = model[2]
+    coords = collect(cumsum(append!([0], abs.(pattern))))
+    
+    outcells = getOutCells(FV, pattern, V)
+    cellGroups = getCellGroups(outcells, pattern)
+
     outVertices = [vcat(v, [z]) for z in coords for v in V]
-    cellGroups = convert(Array{Array{Int, 1}, 1}, cellGroups)
     outModel = outVertices, cellGroups
     hcat(outVertices...), cellGroups
 end
-function extrudeSimplicial(model::Union{Any,Lar.Cells}, pattern)
-	V,FV = model
-    d, m = length(FV[1]), length(pattern)
+@inline function extrudeSimplicial(model::Union{Any,Lar.Cells}, pattern)
+    V,FV = model
     coords = collect(cumsum(append!([0], abs.(pattern))))
-    offset, outcells, rangelimit, i = length(V), [], d*m, 0
-    for cell in FV
-    	i += 1
-        tube = [v+k*offset for k in range(0, length=m+1) for v in cell]
-        cellTube = [tube[k:k+d] for k in range(1, length=rangelimit)]
-        if i==1 outcells = reshape(cellTube, d, m)
-        else outcells = vcat(outcells, reshape(cellTube, d, m)) end
-    end
-    cellGroups = []
-    for i in 1:size(outcells, 2)
-        if pattern[i]>0
-            cellGroups = vcat(cellGroups, outcells[:, i])
-        end
-    end
+    
+    outcells = getOutCells(FV, pattern, V)
+    cellGroups = getCellGroups(outcells, pattern)
+
     outVertices = [vcat(v, [z]) for z in coords for v in V]
-    cellGroups = convert(Array{Array{Int, 1}, 1}, cellGroups)
     outModel = outVertices, cellGroups
     hcat(outVertices...), cellGroups
 end
@@ -154,11 +154,11 @@ julia> V,HV = simplexGrid([1,1,1,1]) # 4-dim cellular complex from the 4D simple
 """
 function simplexGrid(shape)
     model = [[]], [[1]]
-    for item in shape
+    @inbounds @simd for item in shape
         model = extrudeSimplicial(model, fill(1, item))
     end
     V, CV = model
-    V = convert(Array{Float64,2}, V)
+    V = convert(Matrix{Float64}, V)
     return V, CV
 end
 
@@ -203,10 +203,10 @@ julia> Plasm.view(V,TV)
 
 ```
 """
-function simplexFacets(simplices)
-    out = Array{Int64,1}[]
-	for simplex in simplices
-		for v in simplex
+@inline function simplexFacets(simplices)
+	out = Vector{Int64}[]
+	@inbounds for simplex in simplices
+		@inbounds @simd for v in simplex
 			facet = setdiff(simplex,v)
 			push!(out, facet)
 		end
@@ -214,5 +214,3 @@ function simplexFacets(simplices)
 	# remove duplicate facets
 	return sort(collect(Set(out)))
 end
-
-CV = simplexGrid([1,1,1])
