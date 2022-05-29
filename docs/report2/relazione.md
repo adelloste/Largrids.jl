@@ -18,7 +18,7 @@ https://github.com/adelloste/LinearAlgebraicRepresentation.jl
 L'obiettivo preliminare del seguente studio esecutivo è stato quello di analizzare i file sorgente e individuare le eventuali ottimizzazioni da poter effettuare all'interno del codice, facendo riferimento a quanto discusso in aula durante le lezioni e ai capitoli del libro consigliato **Julia High Performace**. In seguito, sono state testate alcune tecniche di ottimizzazione sui file sorgenti *simplexn.jl* e *largrid.jl*.
 
 ### Analisi
-L'analisi è partita dal file sorgente **largrid.jl** nel quale sono state analizzate inizialmente le funzioni più compatte, come ad esempio le funzioni: **qn**, **grid_0**, **grid_1**, nelle quali sono stati cambiati i tipi delle variabili. Il tipo `Array{T,1}` è stato rimpiazzato con il tipo `Vector{T}` mentre per *array multidimensionali* si è fatto ricorso al `Matrix{T}`. Il cambio di tipo, anche se in minima parte, ha migliorato le prestazioni delle funzioni.  
+L'analisi è partita dal file sorgente **largrid.jl** nel quale sono state analizzate inizialmente le funzioni più compatte, come ad esempio le funzioni: **qn**, **grid_0**, **grid_1**, nelle quali sono stati cambiati i tipi delle variabili e sono state rimosse le funzioni *hcat* e *vcat*. Il tipo `Array{T,1}` è stato rimpiazzato con il tipo `Vector{T}` mentre per *array multidimensionali* si è fatto ricorso al `Matrix{T}`. Il cambio di tipo, anche se in minima parte, ha migliorato le prestazioni delle funzioni.  
 Un'altra ottimizzazione fatta nella fase iniziale dello studio è stata quella di utilizzare la funzione *reduce* insieme alla funzione *vcat* nelle parti di codice dove era presente solo la funzione *vcat* che può risultare poco efficiente quando lavora con una grande quantità di array. Anche in questo caso c'è stato un piccolo miglioramento di prestazioni, in quanto, l'utilizzo congiunto delle due funzioni comporta una minore allocazione di memoria.
 
 Successivamente, sono state considerate le altre funzioni, nelle quali sono stati aggiornati, anche in questo caso, i tipi delle variabili ed in seguito, in alcune funzioni, sono state aggiunte le macro `@inline`, `@inbound` e `@simd`.
@@ -99,19 +99,20 @@ Output funzione ottimizzata:
 
 ![grid_0_opt](./images/grid_0_opt.png){#id-fig-4 .class width=80% margin=auto}
 
+\pagebreak
 
 ### **qn**
 
 Output funzione:
 
-![qn](./images/qn.png){#id-fig-5 .class width=80% margin=auto}
+![grid_1](./images/grid_1.png){#id-fig-5 .class width=80% margin=auto}
 
-\pagebreak
 
 Output funzione ottimizzata:
 
-![qn_opt](./images/qn_opt.png){#id-fig-6 .class width=80% margin=auto}
+![grid_1_opt](./images/grid_1_opt.png){#id-fig-6 .class width=80% margin=auto}
 
+\pagebreak
 
 ### **larVertProd**
 
@@ -124,7 +125,6 @@ Output funzione ottimizzata:
 
 ![larVertProd_opt](./images/larVertProd_opt.png){#id-fig-8 .class width=80% margin=auto}
 
-\pagebreak
 
 ### **simplexGrid**
 
@@ -132,6 +132,7 @@ Output funzione:
 
 ![simpleGrid](./images/simpleGrid.png){#id-fig-7 .class width=100% margin=auto}
 
+\pagebreak
 
 Output funzione ottimizzata:
 
