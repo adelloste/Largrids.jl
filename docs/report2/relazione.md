@@ -101,7 +101,7 @@ Output funzione ottimizzata:
 
 \pagebreak
 
-### **qn**
+### **grid_1**
 
 Output funzione:
 
