@@ -85,27 +85,20 @@ end
     return outcells
 end
 
-@inline function extrudeSimplicial(model::Lar.LAR, pattern)
-    V = [model[1][:,k] for k=1:size(model[1],2)]
-    FV = model[2]
+@inline function extrudeSimplicial(model::Union{Any,Lar.Cells,Lar.LAR}, pattern)
+    if (model isa Lar.LAR)
+        V = [model[1][:,k] for k=1:size(model[1],2)]
+        FV = model[2]
+    else
+        V,FV = model
+    end
+
     coords = collect(cumsum(append!([0], abs.(pattern))))
     
     outcells = getOutCells(FV, pattern, V)
     cellGroups = getCellGroups(outcells, pattern)
 
-    outVertices = [vcat(v, [z]) for z in coords for v in V]
-    outModel = outVertices, cellGroups
-    hcat(outVertices...), cellGroups
-end
-@inline function extrudeSimplicial(model::Union{Any,Lar.Cells}, pattern)
-    V,FV = model
-    coords = collect(cumsum(append!([0], abs.(pattern))))
-    
-    outcells = getOutCells(FV, pattern, V)
-    cellGroups = getCellGroups(outcells, pattern)
-
-    outVertices = [vcat(v, [z]) for z in coords for v in V]
-    outModel = outVertices, cellGroups
+    outVertices = [[v; [z]] for z in coords for v in V]
     hcat(outVertices...), cellGroups
 end
 
