@@ -3,7 +3,12 @@
 [![Runtests](https://github.com/adelloste/LinearAlgebraicRepresentation.jl/actions/workflows/Runtests.yml/badge.svg)](https://github.com/adelloste/LinearAlgebraicRepresentation.jl/actions/workflows/Runtests.yml)
 [![Documenter](https://github.com/adelloste/LinearAlgebraicRepresentation.jl/actions/workflows/Documenter.yml/badge.svg)](https://github.com/adelloste/LinearAlgebraicRepresentation.jl/actions/workflows/Documenter.yml)
 
-Official Julia implementation of [LAR](http://dx.doi.org/10.1016/j.cad.2013.08.044), the Linear Algebraic Representation for Solid Modeling.  
+Generation of multidimensional cuboidal and simplicial complexes, and Cartesian product of complexes
+
+## Autori: 
+* Alessandro Dell'Oste
+* Manuel Granchelli
+* Maurizio Brini
 
 ## Documentation
 
