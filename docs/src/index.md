@@ -4,13 +4,19 @@ Generation of multidimensional cuboidal and simplicial complexes, and Cartesian 
 
 ## Contributors
 
-[![adelloste](https://avatars.githubusercontent.com/u/29163287?v=4&s=117)](https://github.com/adelloste) |[![mgranchelli](https://avatars.githubusercontent.com/u/45238718?v=4&s=117)](https://github.com/mgranchelli) |[![mauri5566](https://avatars.githubusercontent.com/u/80046977?v=4&s=117)](https://github.com/mauri5566) |
-:---: |:---: |:---: |
-[adelloste](https://github.com/adelloste) |[mgranchelli](https://github.com/mgranchelli) |[mauri5566](https://github.com/mauri5566)
+| Nome| Matricola | E-mail | Profilo Github |
+|:---|:---|:---|:---|
+|Alessandro Dell'Oste|502042|ale.delloste@stud.uniroma3.it| [https://github.com/adelloste](https://github.com/adelloste) |
+| Manuel Granchelli|512406|man.granchelli@stud.uniroma3.it|[https://github.com/mgranchelli](https://github.com/mgranchelli)|
+| Maurizio Brini|505195|mau.brini@stud.uniroma3.it|[https://github.com/mauri5566](https://github.com/mauri5566) |
 
 ## Repository
 
 Go to [repository](https://github.com/adelloste/LinearAlgebraicRepresentation.jl)
+
+## Notebook
+
+Go to [notebooks](https://github.com/adelloste/LinearAlgebraicRepresentation.jl/tree/main/notebooks)
 
 ## Index
 

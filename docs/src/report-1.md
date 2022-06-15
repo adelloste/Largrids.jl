@@ -32,13 +32,9 @@ La generazione di **complessi cuboidali** avviene tramite il prodotto cartesiano
 
 ## Grafo dipendenze
 
-```@raw html
-<img alt="Dipendenze del file simplexn.jl" src="./images/report1/simplexn.png" width="40%">
-```
+![Dipendenze del file simplexn.jl](./images/report1/simplexn.png)
 
-```@raw html
-<img alt="Dipendenze del file largrid.jl" src="./images/report1/largrid.png" width="60%">
-```
+![Dipendenze del file largrid.jl](./images/report1/largrid.png)
 
 ## Esempi
 Nella seguente sezione sono riportati esempi, con i relativi output, di alcune funzioni dei due file sorgenti. Negli esempi viene utilizzata la libreria in Julia **ViewerGL** per la visualizzazione interattiva 3D dei dati geometrici.
@@ -53,7 +49,7 @@ GL.GLLines(model...), GL.GLFrame ]);
 ```
 **Output:**
 
-![simplex](./images/report1/simplex.png){#id-fig-3 .class width=50% margin=auto}
+![simplex](./images/report1/simplex.png)
 
 ```julia
 grid_2d = Lar.simplexGrid([3,3])
@@ -65,7 +61,7 @@ GL.GLLines(grid_2d...), GL.GLFrame ]);
 ```
 **Output:**
 
-![simplexGrid](./images/report1/simplexGrid.png){#id-fig-4 .class width=50% margin=auto}
+![simplexGrid](./images/report1/simplexGrid.png)
 
 ```julia
 VOID = [[]], [[1]]
@@ -77,7 +73,7 @@ GL.VIEW([ GL.GLGrid(model..., GL.COLORS[7], 0.5) ]);
 ```
 **Output:**
 
-![extrudeSimplicial](./images/report1/extrudeSimplicial_1.png){#id-fig-5 .class width=50% margin=auto}
+![extrudeSimplicial](./images/report1/extrudeSimplicial_1.png)
 
 ```julia
 model = Lar.extrudeSimplicial( model, ones(10) )
@@ -92,7 +88,7 @@ GL.VIEW([ GL.GLLines(model..., GL.COLORS[7]), GL.GLFrame ]);
 ```
 **Output:**
 
-![extrudeSimplicial](./images/report1/extrudeSimplicial_2.png){#id-fig-6 .class width=50% margin=auto}
+![extrudeSimplicial](./images/report1/extrudeSimplicial_2.png)
 
 ```julia
 model = Lar.extrudeSimplicial( model, ones(10) )
@@ -104,7 +100,7 @@ GL.VIEW([ GL.GLGrid(model..., GL.COLORS[7], 0.5) ]);
 ```
 **Output:**
 
-![extrudeSimplicial](./images/report1/extrudeSimplicial_3.png){#id-fig-7 .class width=50% margin=auto}
+![extrudeSimplicial](./images/report1/extrudeSimplicial_3.png)
 
 ### Largrid.jl
 ```julia
@@ -115,7 +111,7 @@ GL.VIEW([ GL.GLFrame2, GL.GLGrid( model1D...,GL.COLORS[1],1 ) ]);
 ```
 **Output:**
 
-![qn](./images/report1/qn.png){#id-fig-8 .class width=50% margin=auto}
+![qn](./images/report1/qn.png)
 
 ```julia
 model2D = Lar.larModelProduct([ model1D, model1D ])
@@ -128,7 +124,7 @@ GL.VIEW([ GL.GLFrame2, GL.GLGrid( model2D...,GL.COLORS[1],1 ) ]);
 ```
 **Output:**
 
-![larModelProduct](./images/report1/larModelProduct.png){#id-fig-9 .class width=50%}
+![larModelProduct](./images/report1/larModelProduct.png)
 
 ```julia
 model3D = Lar.INSR(Lar.larModelProduct)([model1D, model1D, model1D])
@@ -145,4 +141,4 @@ GL.VIEW([ GL.GLFrame, GL.GLPol( model3D...,GL.COLORS[1],1 ) ]);
 ```
 **Output:**
 
-![INSR](./images/report1/INSR.png){#id-fig-10 .class width=50%}
+![INSR](./images/report1/INSR.png)
