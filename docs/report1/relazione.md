@@ -1,5 +1,5 @@
-# Studio preliminare: LAR cuboids & simplices
-Nel progetto numero 1 - **LAR cuboids & simplices** sono stati analizzati i due file sorgenti *largrid.jl* e *simplexn.jl* presenti all'interno della libreria **Lar** (Linear Algebraic Rapresentation). 
+# Studio preliminare: LAR cuboids & simplicial
+Nel progetto numero 1 - **LAR cuboids & simplicial** sono stati analizzati i due file sorgenti *largrid.jl* e *simplexn.jl* presenti all'interno della libreria **Lar** (Linear Algebraic Rapresentation). 
 
 ## Autori: 
 * Alessandro Dell'Oste: 502589
@@ -47,10 +47,9 @@ model = Lar.simplex(2)
 GL.VIEW([ GL.GLGrid(model..., GL.COLORS[7],0.7), 
 GL.GLLines(model...), GL.GLFrame ]);
 ```
-\pagebreak
 **Output:**
 
-![simplex](./images/simplex.png){#id-fig-3 .class width=50% margin=auto}
+![simplex](./images/simplex.png){#id-fig-3 .class width=35% margin=auto}
 
 ```julia
 grid_2d = Lar.simplexGrid([3,3])
@@ -62,7 +61,7 @@ GL.GLLines(grid_2d...), GL.GLFrame ]);
 ```
 **Output:**
 
-![simplexGrid](./images/simplexGrid.png){#id-fig-4 .class width=50% margin=auto}
+![simplexGrid](./images/simplexGrid.png){#id-fig-4 .class width=48% margin=auto}
 
 ```julia
 VOID = [[]], [[1]]
@@ -74,7 +73,7 @@ GL.VIEW([ GL.GLGrid(model..., GL.COLORS[7], 0.5) ]);
 ```
 **Output:**
 
-![extrudeSimplicial](./images/extrudeSimplicial_1.png){#id-fig-5 .class width=50% margin=auto}
+![extrudeSimplicial](./images/extrudeSimplicial_1.png){#id-fig-5 .class width=48% margin=auto}
 
 ```julia
 model = Lar.extrudeSimplicial( model, ones(10) )
@@ -89,7 +88,7 @@ GL.VIEW([ GL.GLLines(model..., GL.COLORS[7]), GL.GLFrame ]);
 ```
 **Output:**
 
-![extrudeSimplicial](./images/extrudeSimplicial_2.png){#id-fig-6 .class width=50% margin=auto}
+![extrudeSimplicial](./images/extrudeSimplicial_2.png){#id-fig-6 .class width=40% margin=auto}
 
 ```julia
 model = Lar.extrudeSimplicial( model, ones(10) )
@@ -101,7 +100,7 @@ GL.VIEW([ GL.GLGrid(model..., GL.COLORS[7], 0.5) ]);
 ```
 **Output:**
 
-![extrudeSimplicial](./images/extrudeSimplicial_3.png){#id-fig-7 .class width=50% margin=auto}
+![extrudeSimplicial](./images/extrudeSimplicial_3.png){#id-fig-7 .class width=40% margin=auto}
 
 ### Largrid.jl
 ```julia
@@ -110,10 +109,9 @@ model1D = Lar.qn(5)([.1,-.1])
 [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]])"
 GL.VIEW([ GL.GLFrame2, GL.GLGrid( model1D...,GL.COLORS[1],1 ) ]);
 ```
-\pagebreak
 **Output:**
 
-![qn](./images/qn.png){#id-fig-8 .class width=50% margin=auto}
+![qn](./images/qn.png){#id-fig-8 .class width=40% margin=auto}
 
 ```julia
 model2D = Lar.larModelProduct([ model1D, model1D ])
@@ -126,7 +124,7 @@ GL.VIEW([ GL.GLFrame2, GL.GLGrid( model2D...,GL.COLORS[1],1 ) ]);
 ```
 **Output:**
 
-![larModelProduct](./images/larModelProduct.png){#id-fig-9 .class width=50%}
+![larModelProduct](./images/larModelProduct.png){#id-fig-9 .class width=40%}
 
 ```julia
 model3D = Lar.INSR(Lar.larModelProduct)([model1D, model1D, model1D])
@@ -143,4 +141,4 @@ GL.VIEW([ GL.GLFrame, GL.GLPol( model3D...,GL.COLORS[1],1 ) ]);
 ```
 **Output:**
 
-![INSR](./images/INSR.png){#id-fig-10 .class width=50%}
+![INSR](./images/INSR.png){#id-fig-10 .class width=40%}

@@ -1,12 +1,12 @@
 # Studio esecutivo: LAR cuboids & simplices
 Nel seguente documento verrà illustrato lo studio esecutivo per il progetto numero 1 - **LAR cuboids & simplices**, nel quale saranno descritte le ottimizzazioni fatte per i due file sorgenti *largrid.jl* e *simplexn.jl* presenti all'interno della libreria **Lar** (Linear Algebraic Rapresentation). 
 
-## Autori: 
+## Autori
 * Alessandro Dell'Oste: 502589
 * Maurizio Brini: 505195
 * Manuel Granchelli: 512406
 
-## Repo GitHub: 
+## Repo GitHub 
 https://github.com/adelloste/LinearAlgebraicRepresentation.jl
 
 ## Indice
