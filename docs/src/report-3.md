@@ -23,7 +23,11 @@ In seguito alle ottimizzazioni introdotte, è stato aggiornato anche il grafo de
 
 ### Grafo dipendenze
 
+#### simplexn.jl
+
 ![Dipendenze del file simplexn.jl](./images/report3/simplexn.png)
+
+#### largrid.jl
 
 ![Dipendenze del file largrid.jl](./images/report3/largrid.png)
 
