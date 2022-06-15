@@ -11,3 +11,10 @@ Generation of multidimensional cuboidal and simplicial complexes, and Cartesian 
 ## Repository
 
 Go to [repository](https://github.com/adelloste/LinearAlgebraicRepresentation.jl)
+
+## Index
+
+```@contents
+Pages = ["lar.md"]
+Depth = 3
+```
