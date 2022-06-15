@@ -15,5 +15,5 @@ Go to [repository](https://github.com/adelloste/LinearAlgebraicRepresentation.jl
 ## Index
 
 ```@contents
-Pages = ["lar.md", "dependency-graph-original.md", "dependency-graph-modified.md", "largrid.md", "simplexn.md"]
+Pages = ["lar.md", "dependency-graph-original.md", "dependency-graph-modified.md", "report-1.md", "report-2.md", "report-3.md", "largrid.md", "simplexn.md"]
 ```

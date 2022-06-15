@@ -23,9 +23,9 @@ In seguito alle ottimizzazioni introdotte, è stato aggiornato anche il grafo de
 
 ### Grafo dipendenze
 
-![Dipendenze del file simplexn.jl](../assets/images/report3/simplexn.png){#id-fig-1 .class width=40%}
+![Dipendenze del file simplexn.jl](./images/report3/simplexn.png){#id-fig-1 .class width=40%}
 
-![Dipendenze del file largrid.jl](../assets/images/report3/largrid.png){#id-fig-2 .class width=60%}
+![Dipendenze del file largrid.jl](./images/report3/largrid.png){#id-fig-2 .class width=60%}
 
 
 ### Conclusioni

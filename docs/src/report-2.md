@@ -79,12 +79,12 @@ Nella seguente sezione sono riportati alcuni dei test effettuati su alcune funzi
 
 Output funzione:
 
-![grid](../assets/images/report2/grid.png){#id-fig-1 .class width=80% margin=auto}
+![grid](./images/report2/grid.png){#id-fig-1 .class width=80% margin=auto}
 
 
 Output funzione ottimizzata:
 
-![grid_opt](../assets/images/report2/grid_opt.png){#id-fig-2 .class width=80% margin=auto}
+![grid_opt](./images/report2/grid_opt.png){#id-fig-2 .class width=80% margin=auto}
 
 \pagebreak
 
@@ -92,12 +92,12 @@ Output funzione ottimizzata:
 
 Output funzione:
 
-![grid_0](../assets/images/report2/grid_0.png){#id-fig-3 .class width=80% margin=auto}
+![grid_0](./images/report2/grid_0.png){#id-fig-3 .class width=80% margin=auto}
 
 
 Output funzione ottimizzata:
 
-![grid_0_opt](../assets/images/report2/grid_0_opt.png){#id-fig-4 .class width=80% margin=auto}
+![grid_0_opt](./images/report2/grid_0_opt.png){#id-fig-4 .class width=80% margin=auto}
 
 \pagebreak
 
@@ -105,12 +105,12 @@ Output funzione ottimizzata:
 
 Output funzione:
 
-![grid_1](../assets/images/report2/grid_1.png){#id-fig-5 .class width=80% margin=auto}
+![grid_1](./images/report2/grid_1.png){#id-fig-5 .class width=80% margin=auto}
 
 
 Output funzione ottimizzata:
 
-![grid_1_opt](../assets/images/report2/grid_1_opt.png){#id-fig-6 .class width=80% margin=auto}
+![grid_1_opt](./images/report2/grid_1_opt.png){#id-fig-6 .class width=80% margin=auto}
 
 \pagebreak
 
@@ -118,22 +118,22 @@ Output funzione ottimizzata:
 
 Output funzione:
 
-![larVertProd](../assets/images/report2/larVertProd.png){#id-fig-7 .class width=80% margin=auto}
+![larVertProd](./images/report2/larVertProd.png){#id-fig-7 .class width=80% margin=auto}
 
 
 Output funzione ottimizzata:
 
-![larVertProd_opt](../assets/images/report2/larVertProd_opt.png){#id-fig-8 .class width=80% margin=auto}
+![larVertProd_opt](./images/report2/larVertProd_opt.png){#id-fig-8 .class width=80% margin=auto}
 
 
 ### **simplexGrid**
 
 Output funzione:
 
-![simpleGrid](../assets/images/report2/simpleGrid.png){#id-fig-7 .class width=100% margin=auto}
+![simpleGrid](./images/report2/simpleGrid.png){#id-fig-7 .class width=100% margin=auto}
 
 \pagebreak
 
 Output funzione ottimizzata:
 
-![simpleGrid_opt](../assets/images/report2/simpleGrid_opt.png){#id-fig-8 .class width=100% margin=auto}
+![simpleGrid_opt](./images/report2/simpleGrid_opt.png){#id-fig-8 .class width=100% margin=auto}
