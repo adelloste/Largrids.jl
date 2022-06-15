@@ -16,5 +16,4 @@ Go to [repository](https://github.com/adelloste/LinearAlgebraicRepresentation.jl
 
 ```@contents
 Pages = ["lar.md"]
-Depth = 3
 ```
