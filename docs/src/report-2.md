@@ -86,8 +86,6 @@ Output funzione ottimizzata:
 
 ![grid_opt](./images/report2/grid_opt.png){#id-fig-2 .class width=80% margin=auto}
 
-\pagebreak
-
 ### **grid_0**
 
 Output funzione:
@@ -99,8 +97,6 @@ Output funzione ottimizzata:
 
 ![grid_0_opt](./images/report2/grid_0_opt.png){#id-fig-4 .class width=80% margin=auto}
 
-\pagebreak
-
 ### **grid_1**
 
 Output funzione:
@@ -111,8 +107,6 @@ Output funzione:
 Output funzione ottimizzata:
 
 ![grid_1_opt](./images/report2/grid_1_opt.png){#id-fig-6 .class width=80% margin=auto}
-
-\pagebreak
 
 ### **larVertProd**
 
@@ -131,8 +125,6 @@ Output funzione ottimizzata:
 Output funzione:
 
 ![simpleGrid](./images/report2/simpleGrid.png){#id-fig-7 .class width=100% margin=auto}
-
-\pagebreak
 
 Output funzione ottimizzata:
 

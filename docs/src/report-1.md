@@ -32,9 +32,13 @@ La generazione di **complessi cuboidali** avviene tramite il prodotto cartesiano
 
 ## Grafo dipendenze
 
-![Dipendenze del file simplexn.jl](./images/report1/simplexn.png){#id-fig-1 .class width=40%}
+```@raw html
+<img alt="Dipendenze del file simplexn.jl" src="./images/report1/simplexn.png" width="40%">
+```
 
-![Dipendenze del file largrid.jl](./images/report1/largrid.png){#id-fig-2 .class width=60%}
+```@raw html
+<img alt="Dipendenze del file largrid.jl" src="./images/report1/largrid.png" width="60%">
+```
 
 ## Esempi
 Nella seguente sezione sono riportati esempi, con i relativi output, di alcune funzioni dei due file sorgenti. Negli esempi viene utilizzata la libreria in Julia **ViewerGL** per la visualizzazione interattiva 3D dei dati geometrici.
@@ -47,7 +51,6 @@ model = Lar.simplex(2)
 GL.VIEW([ GL.GLGrid(model..., GL.COLORS[7],0.7), 
 GL.GLLines(model...), GL.GLFrame ]);
 ```
-\pagebreak
 **Output:**
 
 ![simplex](./images/report1/simplex.png){#id-fig-3 .class width=50% margin=auto}
@@ -110,7 +113,6 @@ model1D = Lar.qn(5)([.1,-.1])
 [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]])"
 GL.VIEW([ GL.GLFrame2, GL.GLGrid( model1D...,GL.COLORS[1],1 ) ]);
 ```
-\pagebreak
 **Output:**
 
 ![qn](./images/report1/qn.png){#id-fig-8 .class width=50% margin=auto}
