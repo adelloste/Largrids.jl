@@ -196,7 +196,7 @@ julia> cart([[1,2,3],["a","b"],[11,12]])
 ```
 """
 function cart(args)::Vector{Tuple}
-   return sort(vcat(collect(Iterators.product(args...))...))
+    return sort(vec(collect(Iterators.product(args...))))
 end
 
 
