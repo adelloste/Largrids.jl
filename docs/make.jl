@@ -10,6 +10,10 @@ makedocs(
 	pages = [
 		"Home" => "index.md",
 		"L.A.R. Intro" => "lar.md",
+		"Dependency graph" => [
+			"Original dependency graph" => "dependency-graph-original.md",
+			"Modified dependency graph" => "dependency-graph-modified.md"
+		],
 		"Grid generation" => [
 			"Cuboidal grids" => "largrid.md",
 			"Simplicial grids" => "simplexn.md"
