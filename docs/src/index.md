@@ -8,3 +8,6 @@ Generation of multidimensional cuboidal and simplicial complexes, and Cartesian 
 :---: |:---: |:---: |
 [adelloste](https://github.com/adelloste) |[mgranchelli](https://github.com/mgranchelli) |[mauri5566](https://github.com/mauri5566)
 
+## Repository
+
+Go to [repository](https://github.com/adelloste/LinearAlgebraicRepresentation.jl)
