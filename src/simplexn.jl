@@ -37,6 +37,30 @@ function simplex(n::Int, fullmodel=false)
 end
 
 
+@inline function createCellGroups(outcells, pattern)
+    cellGroups = []
+    for i in 1:size(outcells, 2)
+        if pattern[i]>0
+            cellGroups = vcat(cellGroups, outcells[:, i])
+        end
+    end
+    return convert(Vector{Vector{Int}}, cellGroups)
+end
+
+@inline function createOutCells(FV, pattern, V)
+    d, m = length(FV[1]), length(pattern)
+    offset, outcells, rangelimit, i = length(V), [], d*m, 0
+
+    for cell in FV
+        i += 1
+        tube = [v+k*offset for k in range(0, length=m+1) for v in cell]
+        cellTube = [tube[k:k+d] for k in range(1, length=rangelimit)]
+        if i==1 outcells = reshape(cellTube, d, m)
+        else outcells = vcat(outcells, reshape(cellTube, d, m)) end
+    end
+    return outcells
+end
+
 """
 	extrudeSimplicial(model::LAR, pattern::Array)::LAR
 
@@ -61,30 +85,6 @@ julia> W,FW = extrudeSimplicial(model, pattern);
 julia> Plasm.view(W,FW)
 ```
 """
-@inline function getCellGroups(outcells, pattern)
-    cellGroups = []
-    for i in 1:size(outcells, 2)
-        if pattern[i]>0
-            cellGroups = vcat(cellGroups, outcells[:, i])
-        end
-    end
-    return convert(Vector{Vector{Int}}, cellGroups)
-end
-
-@inline function getOutCells(FV, pattern, V)
-    d, m = length(FV[1]), length(pattern)
-    offset, outcells, rangelimit, i = length(V), [], d*m, 0
-
-    for cell in FV
-        i += 1
-        tube = [v+k*offset for k in range(0, length=m+1) for v in cell]
-        cellTube = [tube[k:k+d] for k in range(1, length=rangelimit)]
-        if i==1 outcells = reshape(cellTube, d, m)
-        else outcells = vcat(outcells, reshape(cellTube, d, m)) end
-    end
-    return outcells
-end
-
 @inline function extrudeSimplicial(model::Union{Any,Lar.Cells,Lar.LAR}, pattern)
     if (model isa Lar.LAR)
         V = [model[1][:,k] for k=1:size(model[1],2)]
@@ -95,8 +95,8 @@ end
 
     coords = collect(cumsum(append!([0], abs.(pattern))))
     
-    outcells = getOutCells(FV, pattern, V)
-    cellGroups = getCellGroups(outcells, pattern)
+    outcells = createOutCells(FV, pattern, V)
+    cellGroups = createCellGroups(outcells, pattern)
 
     outVertices = [[v; [z]] for z in coords for v in V]
     hcat(outVertices...), cellGroups
