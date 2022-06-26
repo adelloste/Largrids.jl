@@ -1,10 +1,10 @@
 push!(LOAD_PATH,"../src/")
 
-using Documenter, LinearAlgebraicRepresentation
-Lar = LinearAlgebraicRepresentation
+using Documenter, Largrids
+Lar = Largrids
 
 makedocs(
-	sitename = "LinearAlgebraicRepresentation.jl",
+	sitename = "Largrids.jl",
 	format = Documenter.HTML(),
 	assets = ["assets/lar.css", "assets/logo.png"],
 	pages = [
@@ -28,5 +28,5 @@ makedocs(
 
 
 deploydocs(
-	repo = "github.com/adelloste/LinearAlgebraicRepresentation.jl.git"
+	repo = "github.com/adelloste/Largrids.jl.git"
 )
