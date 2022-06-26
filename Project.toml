@@ -1,17 +1,19 @@
-name = "LinearAlgebraicRepresentation"
-uuid = "95167b0c-186a-594b-a231-52369c6de044"
+name = "Largrids"
+uuid = "7096d046-28e4-4a49-97dc-088980380cf2"
 keywords = ["geometry", "topology", "cell-complex", "chain-complex"]
 license = "MIT"
-desc = "LAR, the Linear Algebraic Representation for Solid Modeling."
+desc = "Generation of multidimensional cuboidal and simplicial complexes, and Cartesian product of complexes"
 version = "1.0.0"
 
 [deps]
 BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
 DataStructures = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+LinearAlgebraicRepresentation = "95167b0c-186a-594b-a231-52369c6de044"
 OrderedCollections = "bac558e1-5e72-5ebc-8fee-abe8a469f55d"
 Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
 SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+ViewerGL = "32496ab8-9004-11e9-0205-c9e71bda7ab0"
 
 [compat]
 julia = "1.6.0"
