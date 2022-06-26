@@ -90,7 +90,7 @@ julia> Lar.qn(3)([1.5,-2,0.5])
 """
 function qn(n::Int)
 	function qn0(sequence::Vector{T})::Lar.LAR  where T <: Real
-		return grid_opt(repeat(sequence,outer=n)...)
+		return grid(repeat(sequence,outer=n)...)
 	end
 	return qn0
 end
