@@ -1,7 +1,6 @@
 push!(LOAD_PATH,"../src/")
 
-using Documenter, Largrids
-Lar = Largrids
+using Documenter
 
 makedocs(
 	sitename = "Largrids.jl",
@@ -23,8 +22,7 @@ makedocs(
 			"Cuboidal grids" => "largrid.md",
 			"Simplicial grids" => "simplexn.md"
 		]
-	],
-	modules=[Largrids]
+	]
 )
 
 
