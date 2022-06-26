@@ -7,7 +7,7 @@ Nel seguente documento verrà illustrato lo studio esecutivo per il progetto num
 * Manuel Granchelli: 512406
 
 ## Repo GitHub 
-https://github.com/adelloste/LinearAlgebraicRepresentation.jl
+https://github.com/adelloste/Largrids.jl
 
 ## Indice
 * [Obiettivo](#obiettivo)
@@ -70,7 +70,7 @@ Infine, oltre all'aggiunta di macro e al cambio del tipo delle variabili, alcune
 
 Le macro e le varie ottimizzazioni successivamente sono state implementate anche all'interno del file **simplexn.jl**.
 
-Le modifiche al codice sono state eseguite inizialmente sui notebooks *largrid.ipynb* e *simplexn.ipynb* e successivamente sono stati modificati i due file sorgenti **largrid.jl** e **simplexn.jl**. Una volta eseguite le modifiche sono stati lanciati i test presenti all'interno del **[Repo GitHub](https://github.com/adelloste/LinearAlgebraicRepresentation.jl)** nella cartella `test` per verificare il corretto funzionamento del codice. Nel successivo studio si cercherà di migliorare e ottimizzare ulteriormente il codice.
+Le modifiche al codice sono state eseguite inizialmente sui notebooks *largrid.ipynb* e *simplexn.ipynb* e successivamente sono stati modificati i due file sorgenti **largrid.jl** e **simplexn.jl**. Una volta eseguite le modifiche sono stati lanciati i test presenti all'interno del **[Repo GitHub](https://github.com/adelloste/Largrids.jl)** nella cartella `test` per verificare il corretto funzionamento del codice. Nel successivo studio si cercherà di migliorare e ottimizzare ulteriormente il codice.
 
 ### Test
 Nella seguente sezione sono riportati alcuni dei test effettuati su alcune funzioni ottimizzate dei due file sorgenti. I test sono stati effettuati all'interno dei notebook utilizzando la macro **@btime**. Come si può osservare dall'output delle funzioni ottimizzate, in alcuni casi, le funzioni sono migliorate di molto (esempio: funzione **grid** - *(Figura ([2](#id-fig-2)))*)

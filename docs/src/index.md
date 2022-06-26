@@ -1,4 +1,4 @@
-# LinearAlgebraicRepresentation.jl
+# Largrids.jl
 
 Generation of multidimensional cuboidal and simplicial complexes, and Cartesian product of complexes
 
@@ -12,11 +12,11 @@ Generation of multidimensional cuboidal and simplicial complexes, and Cartesian 
 
 ## Repository
 
-Go to [repository](https://github.com/adelloste/LinearAlgebraicRepresentation.jl)
+Go to [repository](https://github.com/adelloste/Largrids.jl)
 
 ## Notebook
 
-Go to [notebooks](https://github.com/adelloste/LinearAlgebraicRepresentation.jl/tree/main/notebooks)
+Go to [notebooks](https://github.com/adelloste/Largrids.jl/tree/main/notebooks)
 
 ## Index
 

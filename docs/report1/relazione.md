@@ -7,7 +7,7 @@ Nel progetto numero 1 - **LAR cuboids & simplicial** sono stati analizzati i due
 * Manuel Granchelli: 512406
 
 ## Repo GitHub: 
-https://github.com/adelloste/LinearAlgebraicRepresentation.jl
+https://github.com/adelloste/Largrids.jl
 
 ## Indice
 * [Simplexn.jl](#simplexn.jl)
