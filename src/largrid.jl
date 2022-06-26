@@ -1,4 +1,4 @@
-Lar = LinearAlgebraicRepresentation
+import LinearAlgebraicRepresentation as Lar
 using DataStructures
 
 
@@ -329,7 +329,7 @@ julia> using Plasm
 julia> Plasm.view(grid3D)
 ```
 """
-function larCellProd(cellLists::Vector{Cells})::Cells
+function larCellProd(cellLists::Vector{Lar.Cells})::Lar.Cells
    shapes = [length(item) for item in cellLists]
    subscripts = cart([collect(range(0, length=shape)) for shape in shapes])
    indices = [collect(tuple) .+ 1 for tuple in subscripts]
@@ -399,7 +399,7 @@ julia> Lar.larGridSkeleton([1,1,1])(3)
 """
 function larGridSkeleton(shape::Vector{Int})
     n = length(shape)
-    function larGridSkeleton0( d::Int )::Cells
+    function larGridSkeleton0( d::Int )::Lar.Cells
 
     	@assert d<=n
 

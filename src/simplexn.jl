@@ -1,4 +1,4 @@
-Lar = LinearAlgebraicRepresentation
+import LinearAlgebraicRepresentation as Lar
 
 """
 	simplex(n::Int, fullmodel=false::Bool)::Union{Lar.LAR, Lar.LARmodel}
