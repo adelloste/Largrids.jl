@@ -23,7 +23,8 @@ makedocs(
 			"Cuboidal grids" => "largrid.md",
 			"Simplicial grids" => "simplexn.md"
 		]
-	]
+	],
+	modules=[Largrids]
 )
 
 
